@@ -11,7 +11,7 @@ This take-home exercise is a way for us to evaluate some of the hands-on skills 
 ## The exercise
 You will find at [this link](https://drive.google.com/file/d/10okw1LKGpzApm3Ecq0rFdlMkdebMOuFY/view?usp=sharing) a dataset containing a text folder, an audio folder and a `metadata.csv` file. Each text file (in `.xml` format) corresponds to exactly one audio file (in `.wav` format). This is a transcription of what is being said in the audio file. For privacy reasons, we have replaced the real audio files with silent audio files. The transcriptions have also been invented.
 
-Each transcription is a conversation between an investigator and a patient (different patient in each transcription) – the patient ID can be found in the transcription. You can find patient level information in the metadata file, using the patient ID column.
+Each transcription is a conversation between an investigator and a patient (different patient in each transcription) – the patient ID can be found in the transcription. You can find patient level information in the metadata file, using the patient ID column. **You should assume that the transcript contains speech from both the patient and the investigator.**
 
 Your task is to build a pipeline to get this data ready for training of machine learning models. Specifically, we want to build a pipeline which allows us to first filter the data based on the `metadata.csv` file, and then transform the selected `.xml` transcriptions into **fixed length numpy arrays of features**, and the selected `.wav` files into **fixed length numpy arrays of features**.
 
@@ -31,7 +31,7 @@ pip install -r requirements.txt
 python -m spacy download en_core_web_sm
 ```
 
-To get started, olease clone this repository and push it to GitHub as a private repository. The deliverable for this take-home exercise is this repo which you can share with us at jack@novoic.com. Please document your code and include a comprehensive `README.md`. Additionally, in the `README.md`, please include answers to the following questions (including code and/or diagrams if you wish):
+To get started, please clone this repository and push it to GitHub as a private repository. The deliverable for this take-home exercise is this repo which you can share with us at jack@novoic.com. Please document your code and include a comprehensive `README.md`. Additionally, in the `README.md`, please include answers to the following questions (including code and/or diagrams if you wish):
 - How would you deploy this repository on a Kubernetes cluster?
 - Assume we now are using this repository as part of a product that we have deployed. How would you ensure that we can stream the data preprocessing? What technologies would you use? 
 
